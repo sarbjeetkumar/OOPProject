@@ -1,6 +1,7 @@
 package ie.gmit.sw;
 
-//Interface Resultable 
+//sarabjeet 
+//Interface Resultable  
 public interface Resultable {
 	
 	public abstract String getPlainText();
