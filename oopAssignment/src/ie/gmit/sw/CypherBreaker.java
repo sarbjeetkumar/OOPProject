@@ -26,14 +26,7 @@ public class CypherBreaker {
 	}//decryptor finish here 
 	
 	
-	public void forEncryptor(){
-		for(int i =0 ;i<plainText.length();i++ ){
-			new Thread(new Encryptor(queue,plainText,i)).start();
-			
-		}//for ends here 
-		
-	}//Encryptor finish here 
-	
+
 	
 	
 
