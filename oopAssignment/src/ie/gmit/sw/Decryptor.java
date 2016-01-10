@@ -18,20 +18,38 @@ public class Decryptor implements Runnable {
 		
 	}//Constructor ends here 
 	
+	//default 
+	public Decryptor() {
+	
+	}
+
+	public Decryptor(String cypherText, int key) {
+		super();
+		this.cypherText = cypherText;
+		this.key = key;
+	}
 
 	//overRide method from Runnable interface 
 	public void run() {
-		RailFence rail = new RailFence();
-		String decryptedMessage = rail.decrypt(cypherText, key);
 		
-		Resultable rb = null;
+		RailFence r = new RailFence();
+		
+		String de=r.decrypt(cypherText, key);
+		//System.out.println(de.toString());
+		double s = TextScorer.getScore(cypherText);
+		
+		Resultable r1 =  new Result(de, key, s);
 		
 		try {
-			queue.put(rb);
+			queue.put(r1);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+		
+		
 	}
 
 }
