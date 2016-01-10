@@ -2,6 +2,7 @@ package ie.gmit.sw;
 
 import java.nio.MappedByteBuffer;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
@@ -9,6 +10,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Runner {
 	
 	public static void main(String[] args) throws Exception{
+		
+		Scanner Sarab = new Scanner(System.in);
 		
 			//RailFence rf = new RailFence();
 			FileParser fl = new FileParser();
@@ -19,8 +22,13 @@ public class Runner {
 			TextScorer tt= new TextScorer(yo);
 			BlockingQueue<Resultable> queue= new ArrayBlockingQueue<>(1000);
 			
+			System.out.println("Enter the Text encrypt");
+			String userInput = Sarab.next() ;
 			
-			String s = new RailFence().encrypt("THEYAREATTACKINGFROMNORTH", 5);
+			System.out.println("Enter the Key");
+			int Key = Sarab.nextInt();
+			
+			String s = new RailFence().encrypt(userInput, Key);
 			System.out.println(" -> " + s);
 			
 			for(int i = 2; i< s.length();i++){
