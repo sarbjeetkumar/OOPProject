@@ -22,9 +22,13 @@ public class Checker implements Runnable {
 	
 	@Override
 	public void run() {
+		
 		int k=0;
+		
 		while(k<s.length()/2){
+			
 		try {
+			
 			Resultable res = queue.take();
 			score = res.getScore();
 			if(score > highScore){
@@ -33,7 +37,7 @@ public class Checker implements Runnable {
 				
 			}
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		k++;

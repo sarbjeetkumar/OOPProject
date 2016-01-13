@@ -53,8 +53,7 @@ public class Runner {
 			//System.out.println(">" + s);
 			
 			
-			//Decryptor d = new Decryptor("sarabjeet", 4);
-			//d.run();
+			
 			
 			
 		}
